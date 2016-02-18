@@ -33,13 +33,13 @@ class MessagesController < ApplicationController
    def destroy
     @message.destroy
     redirect_to root_path, notice: 'メッセージを削除しました'
-  end
+   end
    
    private
    def message_params
-     params.require(:message).permit(:name,:body)
+     params.require(:message).permit(:name,:body,:age)
    end
    def set_message
     @message = Message.find(params[:id])
-  end
+   end
 end
